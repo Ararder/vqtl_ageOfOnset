@@ -1,6 +1,6 @@
 #reading in Age of onset data
 library(tidyverse)
-path <- "ukb_phen_fid.phen"
+path <- "~/ukb_phen_fid.phen"
 data <- read_tsv(path, col_names = FALSE)
 #theme for graph
 my_theme <- theme(panel.grid = element_blank(), axis.line = element_line(color = "black"),
@@ -27,8 +27,9 @@ clean %>%
   
 
 clean %>% 
- table()
-
-  
+  summary() %>% 
+clean <- clean %>% 
+  arrange(AgeOfOnst)
+view(clean)
   
   
