@@ -36,6 +36,8 @@ plink2 \
 ## Step 2)
 With the data in correct format, we used the --vqtl command with OSCA.
 The code was duplicated for each chromosome, with input data changed, and output named brit_chrX.vqtl
+For computing power, we used 16 cores with 256GB ram each. We excluded SNPs with MAF < 0.05. This resulted in a lot less SNPs to analyze. Largest memory usage was for chr2, with 178.5GB in ram used. Method used was Levene's test with the mean.
+Running time was between 90 minutes and 10.5 hours, depending on chromosome.
 
 
 ```bash
@@ -57,6 +59,32 @@ The code was duplicated for each chromosome, with input data changed, and output
 --out brit_chr3_vqtl
 ```
 
+
+## Step 3)
+The results were bound into one dataframe using R. The top 10 SNPs were extracted and used in an linear interaction model.
+The full code can be found in the gei_interaction folder. The fifty linear model were fit with the following code, where
+data[[17] is age of onset
+
+
+```R
+for(i in 1:length(snps)) {
+  snp <- snps[i]
+  for(f in 1:length(phenotypes)) {
+    pheno <- phenotypes[f]
+    coefs <- tibble()
+    c <- c+1
+    model <- lm(data[[17]] ~ data[[snp]] + data[[pheno]] + data[[snp]] * data[[pheno]])
+    results[[c]] <- model
+    tracking[c,1] <- snp
+    tracking[c,2] <- pheno
+  }
+}
+```
+
+## Conclusion
+This was a short description of the analytic pipeline used for the Bachelor thesis - Interplay of genetic and environmental factors in Age of Onset of Depression.
+
+Full code for each step of the analysis can be found in respective folders.
 
 
 
