@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --job-name=testing_vqtl
+#SBATCH --account=sens2017519
+#SBATCH --time=00-24:00:00
+#SBATCH --ntasks=16
+#SBATCH -C mem256GB
+#SBATCH -p node
+
+/home/arvhar/programs/osca/osca_Linux  \
+--vqtl \
+--bfile /proj/sens2017519/nobackup/b2016326_nobackup/private/arvhar/ukb_imp_chr3_v3_conv_excl \
+--vqtl-mtd 1 \
+--pheno /home/arvhar/samples_and_pheno/pheno_only_brits \
+--maf 0.05  \
+--thread-num 16 \
+--out brit_chr3_vqtl
+
+
+
+
+
+

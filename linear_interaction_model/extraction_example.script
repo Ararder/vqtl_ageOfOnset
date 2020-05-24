@@ -1,0 +1,11 @@
+module load bioinfo-tools
+module load plink
+
+plink \
+--bfile /proj/sens2017519/nobackup/b2016326_nobackup/private/arvhar/ukb_imp_chr7_v3_conv_excl \
+--snps rs12531899 \
+--keep /home/arvhar/samples_and_pheno/only_brits.list \
+--recodeAD \
+--out ~/top_snps/7chr_topsnp.txt \
+
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=converting_to_pbinary
+#SBATCH --account=sens2017519
+#SBATCH --time=00-24:00:00
+#SBATCH --partition=core
+#SBATCH --ntasks=16
+
+module load bioinfo-tools
+module load plink2
+
+plink2 \
+--bgen /castor/project/proj_nobackup/b2016326_nobackup/UKBB/new_release_20180313/EGAD00010001474_decrypted/ukb_imp_chr3_v3.bgen \
+--make-bed \
+--out /proj/sens2017519/nobackup/b2016326_nobackup/private/arvhar/ukb_imp_chr3_v3_conv_excl \
+--threads 16 \
+--rm-dup exclude-all \
+--sample ~/conversion/ukb2222_imp_v3_addsex.sample
+
+
