@@ -35,7 +35,7 @@ plink2 \
 
 ## Step 2)
 With the data in correct format, we used the --vqtl command with OSCA.
-The code was duplicated for each chromosome, with input data changed, and output named brit_chrX.vqtl
+The code was duplicated for each chromosome, with input data changed, and output named brit_chrX.vqtl.
 For computing power, we used 16 cores with 256GB ram each. We excluded SNPs with MAF < 0.05. This resulted in a lot less SNPs to analyze. Largest memory usage was for chr2, with 178.5GB in ram used. Method used was Levene's test with the mean.
 Running time was between 90 minutes and 10.5 hours, depending on chromosome.
 
