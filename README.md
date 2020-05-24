@@ -66,6 +66,27 @@ The full code can be found in the gei_interaction folder. The fifty linear model
 data[[17] is age of onset
 
 
+### A) - extract allele count for the top 10 snps.
+Plink was used to extract genetic data for the 10 SNPS. the AD format is good as it can be read in by R.
+
+```bash
+module load bioinfo-tools
+module load plink
+
+plink \
+--bfile /proj/sens2017519/nobackup/b2016326_nobackup/private/arvhar/ukb_imp_chr3_v3_conv_excl \
+--snps rs347074 \
+--keep /home/arvhar/samples_and_pheno/only_brits.list \
+--recodeAD \
+--out ~/top_snps/3chr_topsnp.txt \
+
+```
+
+
+
+
+### B) Linear interaction model in R
+
 ```R
 for(i in 1:length(snps)) {
   snp <- snps[i]
@@ -79,6 +100,19 @@ for(i in 1:length(snps)) {
     tracking[c,2] <- pheno
   }
 }
+
+#extracing information about each model
+pvals <- tibble()
+for(i in 1:length(results)){
+
+    pvals[i,1:4] <- tidy(results[[i]]) %>% 
+    filter(term == "data[[snp]]:data[[pheno]]") %>% 
+    select(estimate, std.error, statistic, p.value)
+
+}
+
+
+
 ```
 
 ## Conclusion
