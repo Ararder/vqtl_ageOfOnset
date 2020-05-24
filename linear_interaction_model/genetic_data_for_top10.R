@@ -1,6 +1,6 @@
 ##For the interaction model, genetic data on the 68,311 individuals are needed.
 #We need number of alleles, for 10 SNPS.
-#Genetic data was extracted with plink2.
+#Genetic data was extracted with plink.
 
 library(tidyverse)
 
