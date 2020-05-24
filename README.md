@@ -35,7 +35,7 @@ plink2 \
 
 ## Step 2)
 With the data in correct format, we used the --vqtl command with OSCA.
-The code was duplicated for each chromosome, with input data changed, and output named brit_chr[x]_.vqtl
+The code was duplicated for each chromosome, with input data changed, and output named brit_chrX.vqtl
 
 
 ```bash
