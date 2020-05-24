@@ -11,6 +11,7 @@ The software used for the vQTL analysis, OSCA, requires the input format to be i
 The first step was therefore to convert from bgen to plink format. To do this, we generated a .sample file as it's needed for
 plink2 to convert between filetypes.
 OSCA does not accept duplicate SNPs, and we therefore removed duplicate SNPs in the conversion step.
+This was done for each of the chromosomes.
 
 ```bash
 #!/bin/bash
@@ -31,6 +32,31 @@ plink2 \
 --rm-dup exclude-all \
 --sample ~/conversion/ukb2222_imp_v3_addsex.sample
 ```
+
+## Step 2)
+With the data in correct format, we used the --vqtl command with OSCA.
+The code was duplicated for each chromosome, with input data changed, and output named brit_chr[x]_.vqtl
+
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=testing_vqtl
+#SBATCH --account=sens2017519
+#SBATCH --time=00-24:00:00
+#SBATCH --ntasks=16
+#SBATCH -C mem256GB
+#SBATCH -p node
+
+/home/arvhar/programs/osca/osca_Linux  \
+--vqtl \
+--bfile /proj/sens2017519/nobackup/b2016326_nobackup/private/arvhar/ukb_imp_chr3_v3_conv_excl \
+--vqtl-mtd 1 \
+--pheno /home/arvhar/samples_and_pheno/pheno_only_brits \
+--maf 0.05  \
+--thread-num 16 \
+--out brit_chr3_vqtl
+```
+
 
 
 
