@@ -1,10 +1,10 @@
-#Introduction
+# Introduction
 In this repository i show the code and analysis pipeline used for a genome-wide vQTL analysis on age of onset for depression, on the UK Biobank pioneered by Wang et al (https://advances.sciencemag.org/content/5/8/eaaw3538).
 For more information about the vQTL method, checkout the paper!
 
 
 
-##Step 1)
+## Step 1)
 The UK Biobank data was stored on the computing cluster UPPMAX in bgen v1.2 format.
 The software used for the vQTL analysis, OSCA, requires the input format to be in plink binary format (.bed , .bim, .fam).
 
