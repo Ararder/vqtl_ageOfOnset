@@ -74,6 +74,6 @@ final5 <- filter(ch5, P < 0.05)
 nal <- bind_rows(final1,final2,final3,final4,final5)
 
 
-
+# write_tsv (nal,"~/uppmax/top10snps_final.txt")
 
 
