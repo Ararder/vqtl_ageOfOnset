@@ -115,7 +115,8 @@ for(i in 1:length(results)){
 ## Results
 The vQTL genome-wide analysis found no significant SNPs, but one cluster on chromosome 7 was very close.
 
-![](/graphs/final_mhplot.png)
+![](/plots/final_mhplot.png)
+
 
 
 
