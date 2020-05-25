@@ -111,9 +111,15 @@ for(i in 1:length(results)){
 
 }
 
-
-
 ```
+## Results
+The vQTL genome-wide analysis found no significant SNPs, but one cluster on chromosome 7 was very close.
+
+![](/graphs/final_mhplot.png)
+
+
+
+
 
 ## Conclusion
 This was a short description of the analytic pipeline used for the Bachelor thesis - Interplay of genetic and environmental factors in Age of Onset of Depression.
