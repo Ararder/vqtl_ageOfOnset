@@ -131,7 +131,7 @@ The vQTL genome-wide analysis found no significant SNPs, but one cluster on chro
 
 
 
-As described above, we extracted the top ten independant SNPs, and tested them in an linear interaction model with the measures of childhood trauma. The graph visualized all the interaction terms with a p-value less than 0.05. However, since we tested 50 models, the significance threshhold was bonferonni-adjusted to p < 0.001. Noone of the interaction terms reached this stringent significance threshold
+As described above, we extracted the top ten independant SNPs, and tested them in an linear interaction model with the measures of childhood trauma. The graph visualizes all the interaction terms with a p-value less than 0.05. However, since we tested 50 models, the significance threshhold was bonferonni-adjusted to p < 0.001. Noone of the interaction terms reached this stringent significance threshold
 
 ![](/plots/gei_pvals.png)
 
