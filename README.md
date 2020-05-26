@@ -114,7 +114,7 @@ for(i in 1:length(results)){
 ```
 ## Results
 
-The four measures of childhood trauma all showed succesive increase in mean age of onset, by trauma severity.
+The four measures of childhood trauma all showed succesive decrease in mean age of onset, by trauma severity.
 
 
 ![](/plots/felt_hated_better.png)
